@@ -1,0 +1,36 @@
+.upload-file-page {
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upload-file-page-form {
+    display: flex;
+    align-items:center;
+    padding:30px;
+    gap: 15px;
+    flex-direction: column;
+}
+
+
+.upload-file-page h1 {
+    font-size:30px;
+    padding: 5px;
+    text-align:center;
+}
+
+.upload-file-page-form-topic {
+    width: 400px;
+}
+
+.upload-file-page input {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.upload-file-page button {
+    margin-left:auto;
+    font-size: 15px;
+    padding: 5px;
+}

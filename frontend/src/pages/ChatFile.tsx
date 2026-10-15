@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import type { ChangeEvent, FormEvent } from "react";
 import api from "../api";
+import "../styles/ChatFile.css";
 
 
 type ChatResponse = {
@@ -63,25 +64,26 @@ function ChatFile() {
                     )}
                 </div>
             </ul>
-            <h1>This is chatfile page.</h1>
-            <a href="/dashboard">Dashboard</a>
-            <form onSubmit = {handleSubmit}>
-                <input
-                    type="text"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="message"
-                    required
-                />
-                <button type="submit">Ask AI Agent</button>
-            </form>
+            <div className="chat-file-container">
+                <h1>This is chatfile page.</h1>
+                <form className="chat-file-ask" onSubmit = {handleSubmit}>
+                    <input
+                        type="text"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="message"
+                        required
+                    />
+                    <button type="submit">Ask AI Agent</button>
+                </form>
 
-            {response !== "" && (
-                <>
-                    <h2>Ai Answer</h2>
-                    <p>{response}</p>
-                </>
-            )}
+                {response !== "" && (
+                    <>
+                        <h2>Ai Answer</h2>
+                        <p>{response}</p>
+                    </>
+                )}
+            </div>
         </div>
     )
 }

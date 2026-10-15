@@ -9,6 +9,17 @@ type FileData = {
     created_at: Date;
 }
 
+export function formatDateTime(dateTime: Date): string {
+    return new Date(dateTime).toLocaleString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+    });
+}
+
 function Dashboard() {
     const navigate = useNavigate();
     const [username, setUsername] = useState<string | null>(null);
@@ -52,18 +63,28 @@ function Dashboard() {
             </ul>
 
             <div className="dashboard-container">
-                {username !== null && (
-                    <p>Welcome, {username}</p>
+                {username !== null ? (
+                    <h3 className="welcome-message">Welcome, {username}!</h3>
+                ) : (
+                    <h3 className="welcome-message">Welcome!</h3>
                 )}
-                <h3>This is the dashboard</h3>
                 {files !== null  && (
-                    <>
-                        {files.map((file) => (
-                            <div key = {file.id} onClick = {() => detailFile(file.id)} >
-                                <h1>{file.topic} {file.created_at.toLocaleString()}</h1>
-                            </div>
-                        ))}
-                    </>
+                    <table className="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th className="dashboard-table-date">Upload date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {files.map((file) => (
+                                <tr className="dashboard-row" key = {file.id} onClick = {() => detailFile(file.id)} >
+                                    <td>{file.topic}</td>
+                                    <td className="dashboard-row-date">{formatDateTime(file.created_at)}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 )}
             </div>
         </>

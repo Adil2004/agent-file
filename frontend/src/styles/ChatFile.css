@@ -1,0 +1,26 @@
+.chat-file-container {
+    text-align:center;
+}
+
+.chat-file-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-file-container h1 {
+    text-align:center;
+}
+
+.chat-file-ask {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+.chat-file-ask button {
+    align-self: flex-end;
+    font-size: 15px;
+    padding: 5px;
+}

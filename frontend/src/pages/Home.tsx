@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import "../styles/Home.css";
 
 function Home() {
     const [username, setUsername] = useState<string | null>(null);
@@ -28,8 +29,11 @@ function Home() {
                     )}
                 </div>
             </ul>
-
-            <h1>This is home page.</h1>
+            <div className="home-page-text">
+                <h1>This is home page.</h1>
+                <h2>This web application allows users to upload the PDF file.</h2>
+                <h2>Ask questions related to it to integrated AI agent.</h2>
+            </div>
         </div>
     )
 }

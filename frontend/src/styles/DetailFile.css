@@ -1,0 +1,30 @@
+
+.file-detail-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-detail-container h1 {
+    text-align:center;
+}
+
+.file-detail {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.file-detail-content {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+.file-detail-content button {
+    align-self: flex-end;
+    font-size: 15px;
+    padding: 5px;
+}

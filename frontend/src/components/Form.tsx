@@ -3,6 +3,7 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import {ACCESS_TOKEN, REFRESH_TOKEN} from "../constants";
 import type { FormEvent } from "react";
+import "../styles/Form.css"
 
 type FormProps = {
     route: string;
@@ -40,24 +41,33 @@ function Form({route, method}: FormProps) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>{name}</h1>
-            <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Username"
-                required
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-            />
-            <button type="submit">{name}</button>
-        </form>
+        <>
+            <ul className="navbar">
+                <div className="navbar-left">
+                    <li><a href="/">Home</a></li>
+                </div>
+            </ul>
+            <div className="user-form-page">
+                <form className="user-form" onSubmit={handleSubmit}>
+                    <h1>{name}</h1>
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Username"
+                        required
+                    />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password"
+                        required
+                    />
+                    <button type="submit">{name}</button>
+                </form>
+            </div>
+        </>
     );
 }
 

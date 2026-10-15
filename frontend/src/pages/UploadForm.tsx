@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
 import type { ChangeEvent, FormEvent } from "react";
+import "../styles/UploadForm.css";
+
 
 function UploadForm() {
     const navigate = useNavigate();
@@ -12,6 +14,7 @@ function UploadForm() {
     useEffect(() => {
         setUsername(localStorage.getItem("username"));
     }, []);
+    
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
@@ -62,18 +65,21 @@ function UploadForm() {
                     )}
                 </div>
             </ul>
-            <h1>This is the upload form page.</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={topic}
-                    onChange={(e) => setTopic(e.target.value)}
-                    placeholder="Topic"
-                    required
-                />
-                <input type="file" accept="application/pdf" onChange={handleFileChange} required />
-                <button type="submit">Upload</button>
-            </form>
+            <div className="upload-file-page">
+                <h1>This is the upload form page.</h1>
+                <form className="upload-file-page-form" onSubmit={handleSubmit}>
+                    <input
+                        className="upload-file-page-form-topic"
+                        type="text"
+                        value={topic}
+                        onChange={(e) => setTopic(e.target.value)}
+                        placeholder="Topic"
+                        required
+                    />
+                    <input type="file" accept="application/pdf" onChange={handleFileChange} required />
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
         </div>
     );
 }

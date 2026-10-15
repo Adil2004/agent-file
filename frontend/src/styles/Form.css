@@ -1,0 +1,29 @@
+.user-form-page {
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+}
+
+.user-form {
+    display: flex;
+    align-items:center;
+    padding:30px;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.user-form h1 {
+    font-size:30px;
+}
+
+.user-form input {
+    font-size: 15px;
+    padding: 5px;
+    width: 250px;
+}
+
+.user-form button {
+    font-size: 15px;
+    padding: 5px;
+    margin-left:auto;
+}
